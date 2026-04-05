@@ -1813,7 +1813,7 @@
       </div>
 
       <div class="cform r0" style="transition-delay:.08s">
-        <form id="cf">
+        <form id="contact-form">
           <div class="fg"><label>Ваше имя</label><input type="text" placeholder="Как вас зовут?" required></div>
           <div class="fg"><label>Telegram</label><input type="text" placeholder="@username или номер" required></div>
           <div class="fg"><label>Задача в двух словах</label><textarea placeholder="Что нужно сделать?"></textarea></div>
@@ -1958,7 +1958,7 @@ document.getElementById('mobClose').addEventListener('click',closeMob);
 })();
 
 /* ─── Form submit ─────────────────────────────────── */
-document.getElementById('cf').addEventListener('submit',e=>{
+document.getElementById('contact-form').addEventListener('submit',e=>{
   e.preventDefault();
   const btn=e.target.querySelector('button');
   const inputs=e.target.querySelectorAll('input,textarea');
