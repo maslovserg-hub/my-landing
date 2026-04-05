@@ -339,6 +339,7 @@
                border:1px solid var(--border); border-radius:100px;
                font-size:14px; color:var(--muted); white-space:nowrap;
                background:#fff; box-shadow:0 1px 4px rgba(15,23,42,.06); }
+    .mq-icon { width:18px; height:18px; flex-shrink:0; display:block; }
     @keyframes mq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
     /* ─── Services ───────────────────────────────────── */
@@ -665,6 +666,7 @@
       .stk-grid { grid-template-columns:repeat(2,1fr); }
     }
     @media (max-width:768px) {
+      .qr-desktop { display:none !important; }
       section { padding:68px 0; }
       .nav-links, .nav-cta { display:none; }
       .hbg { display:flex; }
@@ -1415,19 +1417,19 @@
 </div>
 <div class="mq-wrap">
   <div class="mq-track" id="mqt">
-    <div class="mq-item">⚡ React</div><div class="mq-item">🤖 Claude API</div>
-    <div class="mq-item">📱 React Native</div><div class="mq-item">🔗 LangChain</div>
-    <div class="mq-item">⚙️ n8n</div><div class="mq-item">🌐 Next.js</div>
-    <div class="mq-item">🎨 Figma</div><div class="mq-item">☁️ Vercel</div>
-    <div class="mq-item">🛠 Make.com</div><div class="mq-item">📊 TypeScript</div>
-    <div class="mq-item">🚀 Tailwind CSS</div><div class="mq-item">🧠 OpenAI API</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/react/61DAFB" alt="">React</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/anthropic/CC785C" alt="">Claude API</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/react/61DAFB" alt="">React Native</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/langchain/65B891" alt="">LangChain</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="">n8n</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/nextdotjs/888888" alt="">Next.js</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/figma/F24E1E" alt="">Figma</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/vercel/888888" alt="">Vercel</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/make/9B4BB8" alt="">Make.com</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/typescript/3178C6" alt="">TypeScript</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="">Tailwind CSS</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/openai/74AA9C" alt="">OpenAI API</div>
     <!-- duplicate for loop -->
-    <div class="mq-item">⚡ React</div><div class="mq-item">🤖 Claude API</div>
-    <div class="mq-item">📱 React Native</div><div class="mq-item">🔗 LangChain</div>
-    <div class="mq-item">⚙️ n8n</div><div class="mq-item">🌐 Next.js</div>
-    <div class="mq-item">🎨 Figma</div><div class="mq-item">☁️ Vercel</div>
-    <div class="mq-item">🛠 Make.com</div><div class="mq-item">📊 TypeScript</div>
-    <div class="mq-item">🚀 Tailwind CSS</div><div class="mq-item">🧠 OpenAI API</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/react/61DAFB" alt="">React</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/anthropic/CC785C" alt="">Claude API</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/react/61DAFB" alt="">React Native</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/langchain/65B891" alt="">LangChain</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/n8n/EA4B71" alt="">n8n</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/nextdotjs/888888" alt="">Next.js</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/figma/F24E1E" alt="">Figma</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/vercel/888888" alt="">Vercel</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/make/9B4BB8" alt="">Make.com</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/typescript/3178C6" alt="">TypeScript</div>
+    <div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="">Tailwind CSS</div><div class="mq-item"><img class="mq-icon" src="https://cdn.simpleicons.org/openai/74AA9C" alt="">OpenAI API</div>
   </div>
 </div>
 
@@ -1792,8 +1794,8 @@
         <p class="about-p">За <strong>5 лет сдал 47 проектов</strong>. Из них 12 — ИИ-агенты и системы автоматизации. Суммарно сэкономил клиентам <strong>2 000+ часов</strong> ручного труда.</p>
         <p class="about-pers">Объясняю техническое человеческим языком. Отвечаю в день обращения — это не обещание, это привычка.</p>
         <div class="about-links">
-          <a href="#" class="alink">⌨ GitHub</a>
-          <a href="https://t.me/Sergei_A_Maslov" class="alink">✈️ Telegram</a>
+          <a href="#" class="alink"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> GitHub</a>
+          <a href="https://t.me/Sergei_A_Maslov" class="alink"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram</a>
         </div>
       </div>
 
@@ -1825,9 +1827,9 @@
       <div class="cdiv r0"><span>или напишите напрямую</span></div>
 
       <div class="ctg r0" style="transition-delay:.1s">
-        <img src="qr-tg.png" alt="QR-код Telegram @Sergei_A_Maslov" style="width:140px;height:140px;border-radius:12px;">
+        <img src="qr-tg.png" alt="QR-код Telegram @Sergei_A_Maslov" style="width:140px;height:140px;border-radius:12px;display:block;" class="qr-desktop">
         <a href="https://t.me/Sergei_A_Maslov" class="cnote" style="color:var(--accent);text-decoration:none;font-weight:500;margin-top:4px;">@Sergei_A_Maslov</a>
-        <p class="cnote" style="margin-top:6px;">Отвечаю по будням до трёх часов</p>
+        <p class="cnote" style="margin-top:6px;">Отвечаю в будние дни до 20-00</p>
         <a href="https://t.me/Sergei_A_Maslov" class="btn btn-tg" style="font-size:15px;padding:14px 32px;margin-top:12px">✈️ Написать в Telegram</a>
       </div>
 
@@ -1851,8 +1853,8 @@
         <p class="foot-copy">© 2026 Сергей Маслов · Сайты · Приложения · ИИ-агенты</p>
       </div>
       <div class="soc-links">
-        <a href="#" class="soc" title="GitHub">⌨</a>
-        <a href="https://t.me/Sergei_A_Maslov" class="soc" title="Telegram">✈</a>
+        <a href="#" class="soc" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+        <a href="https://t.me/Sergei_A_Maslov" class="soc" title="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
       </div>
     </div>
   </div>
