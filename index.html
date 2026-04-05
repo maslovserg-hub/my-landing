@@ -1957,6 +1957,14 @@
 function openMob(){ const m=document.getElementById('mobMenu'); if(m.classList.contains('open')){closeMob();}else{m.classList.add('open');document.body.style.overflow='hidden';} }
 function closeMob(){ document.getElementById('mobMenu').classList.remove('open'); document.body.style.overflow=''; }
 document.getElementById('mobClose').addEventListener('click',closeMob);
+(()=>{
+  const m=document.getElementById('mobMenu');
+  let startY=0;
+  m.addEventListener('touchstart',e=>{ startY=e.touches[0].clientY; },{passive:true});
+  m.addEventListener('touchend',e=>{
+    if(e.changedTouches[0].clientY - startY < -60) closeMob();
+  },{passive:true});
+})();
 
 /* ─── Portfolio filter ────────────────────────────── */
 (()=>{
