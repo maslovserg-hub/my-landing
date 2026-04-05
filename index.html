@@ -557,7 +557,7 @@
     #pricing { background:radial-gradient(ellipse at 50% 100%,rgba(139,92,246,.07),transparent 60%); }
     .pr-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:52px; align-items:start; }
     .pr-card { background:#fff; border:1px solid var(--border); border-radius:var(--r);
-               padding:30px; transition:transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
+               padding:30px; transition:border-color .3s, box-shadow .3s, transform .35s cubic-bezier(.34,1.56,.64,1), background-color .3s, color .3s;
                box-shadow: var(--shadow); }
     .pr-card:hover { transform:translateY(-6px); box-shadow: var(--shadow-lg); }
     .pr-card.feat { background:linear-gradient(135deg,#EEF2FF,#F5F3FF);
@@ -792,7 +792,7 @@
 
     /* ─── Smooth theme transition ──────────────────── */
     html { transition: background-color .3s ease, color .3s ease; }
-    body, section, .proj-card, .pr-card, .nav-logo, button, input, textarea {
+    body, section, .proj-card, .nav-logo, button, input, textarea {
       transition: background-color .3s ease, color .3s ease, border-color .3s ease;
     }
 
