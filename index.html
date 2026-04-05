@@ -1837,10 +1837,6 @@
         <div class="tb"><span class="ck">✓</span> Отвечаю за 2 часа</div>
       </div>
 
-      <div class="scarcity r0" style="transition-delay:.18s">
-        <span>🔴 Сейчас свободно <strong>1 место</strong> на апрель</span>
-        <a href="#contact">Занять →</a>
-      </div>
 
     </div>
   </div>
@@ -1965,11 +1961,31 @@ document.getElementById('mobClose').addEventListener('click',closeMob);
 document.getElementById('cf').addEventListener('submit',e=>{
   e.preventDefault();
   const btn=e.target.querySelector('button');
+  const inputs=e.target.querySelectorAll('input,textarea');
+  const name=inputs[0].value.trim();
+  const tg=inputs[1].value.trim();
+  const task=inputs[2]?inputs[2].value.trim():'';
   btn.textContent='Отправляю...'; btn.disabled=true;
-  setTimeout(()=>{
-    e.target.style.display='none';
-    document.getElementById('fok').classList.add('show');
-  },1100);
+  const text=`📩 <b>Новая заявка с сайта</b>\n\n👤 <b>Имя:</b> ${name}\n✈️ <b>Telegram:</b> ${tg}\n💬 <b>Задача:</b> ${task||'не указана'}`;
+  fetch('https://api.telegram.org/bot8747383218:AAGgLDUuQaxfic-QRCSYER2c9CJEqqjP-vc/sendMessage',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({chat_id:407801408,text,parse_mode:'HTML'})
+  })
+  .then(r=>r.json())
+  .then(data=>{
+    if(data.ok){
+      e.target.style.display='none';
+      document.getElementById('fok').classList.add('show');
+    } else {
+      btn.textContent='Ошибка, попробуй ещё раз';
+      btn.disabled=false;
+    }
+  })
+  .catch(()=>{
+    btn.textContent='Ошибка, попробуй ещё раз';
+    btn.disabled=false;
+  });
 });
 
 /* ─── 3D Neural Network (нейросеть нервной системы) ── */
