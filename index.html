@@ -205,9 +205,10 @@
              bottom:0; left:35%; animation-delay:-7s; }
     @keyframes bm { from { transform:translate(0,0) scale(1); } to { transform:translate(28px,18px) scale(1.1); } }
 
-    .hero-layout { display:flex; align-items:stretch; gap:36px; position:relative; z-index:1; }
-    .hero-grid { display:flex; flex-direction:column; justify-content:center; flex:0 1 45%; min-width:0; }
-    #heroPhoto { position:relative; flex:1; display:flex; flex-direction:column; justify-content:flex-start; }
+    .hero-layout { display:grid; grid-template-columns:45% 1fr; grid-template-rows:auto 1fr; grid-template-areas:"title photo" "body photo"; gap:36px; position:relative; z-index:1; align-items:stretch; }
+    .hero-title { grid-area:title; display:flex; flex-direction:column; justify-content:flex-end; min-width:0; }
+    .hero-body  { grid-area:body;  display:flex; flex-direction:column; justify-content:flex-start; min-width:0; }
+    #heroPhoto { grid-area:photo; position:relative; display:flex; flex-direction:column; justify-content:flex-start; }
 
     .hero-badge {
       display:none;
@@ -667,9 +668,9 @@
       section { padding:68px 0; }
       .nav-links, .nav-cta { display:none; }
       .hbg { display:flex; }
-      .hero-layout { flex-direction:column; gap:40px; align-items:center; }
-      .hero-grid { max-width:100%; text-align:center; flex:none; }
-      #heroPhoto { flex:none; width:100%; max-width:380px; }
+      .hero-layout { grid-template-columns:1fr; grid-template-areas:"title" "photo" "body"; gap:24px; justify-items:center; }
+      .hero-title, .hero-body { width:100%; text-align:center; }
+      #heroPhoto { width:100%; max-width:380px; }
       .hero-cta { justify-content:center; }
       .hero-sub { margin:0 auto 32px; }
       .hero-stats { justify-content:center; }
@@ -1372,12 +1373,25 @@
   <div class="container">
     <div class="hero-layout">
 
-      <div class="hero-grid">
+      <div class="hero-title">
         <h1 class="hero-h1 r0" style="transition-delay:.05s">
           <span>Создаю <span class="grad">AI-агентов,</span></span>
           <span>которые заменяют ручной труд</span>
           <span>и работают <span class="grad grad-24-7">24/7</span></span>
         </h1>
+      </div>
+
+      <div id="heroPhoto">
+        <div class="photo-wrap">
+          <img src="SamH.png" alt="Сергей Маслов" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div class="photo-shimmer"></div>
+        </div>
+        <div class="hero-badge r0" style="margin-top:18px;justify-content:center;">
+          <span class="pulse"></span>Доступен для новых проектов
+        </div>
+      </div>
+
+      <div class="hero-body">
         <p class="hero-sub r0" style="transition-delay:.1s">
           Разрабатываю сайты, мобильные приложения и ИИ-агентов для бизнеса.<br>
           Один специалист — три задачи под ключ.
@@ -1389,16 +1403,6 @@
         <p class="hero-note r0" style="transition-delay:.18s">
           ✓ Первая консультация бесплатно &nbsp;·&nbsp; <em>Отвечаю за 2 часа</em>
         </p>
-      </div>
-
-      <div id="heroPhoto">
-        <div class="photo-wrap">
-          <img src="SamH.png" alt="Сергей Маслов" style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="photo-shimmer"></div>
-        </div>
-        <div class="hero-badge r0" style="margin-top:18px;justify-content:center;">
-          <span class="pulse"></span>Доступен для новых проектов
-        </div>
       </div>
 
     </div>
