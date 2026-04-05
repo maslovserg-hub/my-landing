@@ -174,9 +174,10 @@
 
     /* mobile menu */
     .mob-menu {
-      display:none; position:fixed; inset:0; z-index:999;
+      display:none; position:fixed; top:0; left:0; right:0; height:60vh; z-index:999;
       background:rgba(248,250,255,.98); backdrop-filter:blur(20px);
       flex-direction:column; align-items:center; justify-content:center; gap:36px;
+      border-radius:0 0 24px 24px; box-shadow:0 8px 40px rgba(0,0,0,.12);
       transform:translateY(0); transition:transform .35s cubic-bezier(.4,0,.2,1);
     }
     .mob-menu.open { display:flex; animation:mobIn .35s cubic-bezier(.4,0,.2,1); }
