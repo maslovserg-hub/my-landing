@@ -177,8 +177,11 @@
       display:none; position:fixed; inset:0; z-index:999;
       background:rgba(248,250,255,.98); backdrop-filter:blur(20px);
       flex-direction:column; align-items:center; justify-content:center; gap:36px;
+      transform:translateY(0); transition:transform .35s cubic-bezier(.4,0,.2,1);
     }
-    .mob-menu.open { display:flex; }
+    .mob-menu.open { display:flex; animation:mobIn .35s cubic-bezier(.4,0,.2,1); }
+    .mob-menu.closing { transform:translateY(-100%); }
+    @keyframes mobIn { from{transform:translateY(-100%)} to{transform:translateY(0)} }
     .mob-menu a { font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700;
                   color:var(--text); text-decoration:none; transition:color var(--t); }
     .mob-menu a:hover { color:var(--accent); }
@@ -1955,7 +1958,7 @@
 
 /* ─── Mobile menu ─────────────────────────────────── */
 function openMob(){ const m=document.getElementById('mobMenu'); if(m.classList.contains('open')){closeMob();}else{m.classList.add('open');document.body.style.overflow='hidden';} }
-function closeMob(){ document.getElementById('mobMenu').classList.remove('open'); document.body.style.overflow=''; }
+function closeMob(){ const m=document.getElementById('mobMenu'); m.classList.add('closing'); setTimeout(()=>{ m.classList.remove('open','closing'); document.body.style.overflow=''; },340); }
 document.getElementById('mobClose').addEventListener('click',closeMob);
 (()=>{
   const m=document.getElementById('mobMenu');
