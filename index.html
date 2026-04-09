@@ -2065,6 +2065,9 @@ document.getElementById('contact-form').addEventListener('submit',e=>{
     mouseY = (e.clientY/innerHeight - 0.5);
   },{passive:true});
 
+  document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) mouseSpeed = 2.5; });
+  window.addEventListener('focus', ()=>{ mouseSpeed = 2.5; });
+
   const LABELS = ['GPT','LLM','BOT','NLP','RAG','API','RPA','OCR','TTS','NER','CV','RL'];
   const TOTAL = 58, N_AGENTS = 12;
   const DIST  = 300;
@@ -2088,7 +2091,7 @@ document.getElementById('contact-form').addEventListener('submit',e=>{
   }
 
   function draw(){
-    mouseSpeed = Math.max(0.5, mouseSpeed * 0.94); // затухание
+    mouseSpeed = Math.max(0.6, mouseSpeed * 0.94); // база 0.6 для заметной анимации
     const spd = mouseSpeed;
     rotY += (0.0018 + mouseX*0.007) * spd;
     rotX += (0.0004 + mouseY*0.003) * spd;
@@ -2230,6 +2233,9 @@ document.getElementById('contact-form').addEventListener('submit',e=>{
     lastMX=e.clientX; lastMY=e.clientY;
   },{passive:true});
 
+  document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) mouseSpeed = 2.5; });
+  window.addEventListener('focus', ()=>{ mouseSpeed = 2.5; });
+
   const LABELS = ['GPT','LLM','BOT','NLP','RAG','API','RPA','OCR','TTS','NER','CV','RL'];
   const TOTAL = 58, N_AGENTS = 12;
   const DIST  = 300;
@@ -2254,7 +2260,7 @@ document.getElementById('contact-form').addEventListener('submit',e=>{
   }
 
   function draw(){
-    mouseSpeed = Math.max(0.5, mouseSpeed * 0.94);
+    mouseSpeed = Math.max(0.6, mouseSpeed * 0.94); // база 0.6 для заметной анимации
     const spd = mouseSpeed;
     rotY += (0.0018 + Math.sin(frame*0.001)*0.007) * spd;
     rotX += (0.0004 + Math.cos(frame*0.001)*0.003) * spd;
