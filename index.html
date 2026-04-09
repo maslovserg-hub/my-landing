@@ -2082,7 +2082,7 @@ document.getElementById('contact-form').addEventListener('submit',e=>{
   }
 
   function draw(){
-    mouseSpeed = Math.max(1, mouseSpeed * 0.94); // затухание
+    mouseSpeed = Math.max(0.5, mouseSpeed * 0.94); // затухание
     const spd = mouseSpeed;
     rotY += (0.0018 + mouseX*0.007) * spd;
     rotX += (0.0004 + mouseY*0.003) * spd;
